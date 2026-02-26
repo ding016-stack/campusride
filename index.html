@@ -617,16 +617,16 @@
   <div class="hero-bg"></div>
   <div class="hero-tag" style="position:relative;z-index:1;">
     <span class="dot"></span>
-    <span data-en="Pre-registrations open · Spring Break &amp; Summer 2026" data-zh="现已开放预约 · 春假 &amp; 2026年暑假">Pre-registrations open · Spring Break &amp; Summer 2026</span>
+    <span id="hero-tag-text" data-en="Pre-registrations open · Spring Break &amp; Summer 2026" data-zh="现已开放预约 · 春假 &amp; 2026年暑假">Pre-registrations open · Spring Break &amp; Summer 2026</span>
   </div>
 
   <h1 style="position:relative;z-index:1;">
-    <span data-en="Split the ride." data-zh="拼车出行">Split the ride.</span><br>
-    <span class="line2" data-en="Not your wallet." data-zh="省钱省心">Not your wallet.</span>
+    <span id="hero-h1-line1">Split the ride.</span><br>
+    <span class="line2" id="hero-h1-line2">Not your wallet.</span>
   </h1>
 
   <p class="hero-sub" style="position:relative;z-index:1;">
-    <span data-en='Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.' data-zh='与<strong>同校同学</strong>一起拼车去机场——结交新朋友，安全合法，比Uber便宜得多。'>Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.</span>
+    <span id="hero-sub">Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.</span>
   </p>
 
   <div class="hero-actions" style="position:relative;z-index:1;">
@@ -681,21 +681,21 @@
   <div class="compare-grid">
     <div class="compare-card bad">
       <span class="tag">❌ Uber / Lyft</span>
-      <h3>Solo ride</h3>
+      <h3 id="uber-title">Solo ride</h3>
       <div class="price-big bad-price">$350+</div>
-      <p>Uber from Philly to JFK costs $350+ alone. During break season with surge pricing, it only gets worse.</p>
+      <p id="uber-desc">Uber from Philly to JFK costs $350+ alone. During break season with surge pricing, it only gets worse.</p>
     </div>
     <div class="compare-card mid">
-      <span class="tag">😓 小红书 / WeChat groups</span>
-      <h3>Manual carpool</h3>
+      <span class="tag" id="wechat-tag">😓 小红书 / WECHAT GROUPS</span>
+      <h3 id="wechat-title">Manual carpool</h3>
       <div class="price-big mid-price">Chaotic</div>
-      <p>Post, wait, DM, negotiate, cancel. No guarantee, no accountability, and you're lugging bags on NJ Transit.</p>
+      <p id="wechat-desc">Post, wait, DM, negotiate, cancel. No guarantee, no accountability, and you're lugging bags on NJ Transit.</p>
     </div>
     <div class="compare-card good">
       <span class="tag">✅ CampusRide</span>
-      <h3>Smart carpool</h3>
-      <div class="price-big good-price">&lt;$100</div>
-      <p>Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.</p>
+      <h3 id="campus-title">Smart carpool</h3>
+      <div class="price-big good-price">~$100</div>
+      <p id="campus-desc">Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.</p>
     </div>
   </div>
 </section>
@@ -709,26 +709,26 @@
     <div class="step-card">
       <div class="step-num">STEP 01</div>
       <span class="step-icon">🎓</span>
-      <h3>Verify with .edu</h3>
-      <p>Sign up with your university email. Only real students from partner schools get access.</p>
+      <h3 id="step1-title">Verify with .edu</h3>
+      <p id="step1-desc">Sign up with your university email. Only real students from partner schools get access.</p>
     </div>
     <div class="step-card">
       <div class="step-num">STEP 02</div>
       <span class="step-icon">✈️</span>
-      <h3>Enter your flight</h3>
-      <p>Tell us your airport (JFK / EWR / LGA), date, and departure time window.</p>
+      <h3 id="step2-title">Enter your flight</h3>
+      <p id="step2-desc">Tell us your airport (JFK / EWR / LGA), date, and departure time window.</p>
     </div>
     <div class="step-card">
       <div class="step-num">STEP 03</div>
       <span class="step-icon">🤝</span>
-      <h3>Auto-matched</h3>
-      <p>We match you with 2–3 students going the same direction. You'll see who's in your group before confirming.</p>
+      <h3 id="step3-title">Auto-matched</h3>
+      <p id="step3-desc">We match you with 2–3 students going the same direction. You'll see who's in your group before confirming.</p>
     </div>
     <div class="step-card">
       <div class="step-num">STEP 04</div>
       <span class="step-icon">🚗</span>
-      <h3>Ride & split</h3>
-      <p>A licensed, vetted driver picks everyone up. Cost is split automatically. Simple.</p>
+      <h3 id="step4-title">Ride & split</h3>
+      <p id="step4-desc">A licensed, vetted driver picks everyone up. Cost is split automatically. Simple.</p>
     </div>
   </div>
 </section>
@@ -741,7 +741,7 @@
   <div class="calc-wrapper">
     <div class="calc-row">
       <div class="calc-group">
-        <label>Your School</label>
+        <label id="label-school">Your School</label>
         <div class="calc-options" id="schoolOptions">
           <button class="calc-btn" onclick="selectOption('school', 'UPenn', this)">UPenn</button>
           <button class="calc-btn" onclick="selectOption('school', 'Princeton', this)">Princeton</button>
@@ -752,7 +752,7 @@
         </div>
       </div>
       <div class="calc-group">
-        <label>Destination Airport</label>
+        <label id="label-airport">Destination Airport</label>
         <div class="calc-options" id="airportOptions">
           <button class="calc-btn" onclick="selectOption('airport', 'JFK', this)">JFK</button>
           <button class="calc-btn" onclick="selectOption('airport', 'EWR', this)">EWR</button>
@@ -764,7 +764,7 @@
     </div>
 
     <div class="calc-result" id="calcResult">
-      <div class="result-placeholder">👆 Select your school and airport to see your price</div>
+      <div class="result-placeholder" id="calc-placeholder">👆 Select your school and airport to see your price</div>
     </div>
 
     <div class="calc-includes">
@@ -787,11 +787,11 @@
     <form id="rideForm" onsubmit="handleSubmit(event)">
       <div class="form-grid">
         <div class="form-group">
-          <label>Full Name</label>
+          <label id="label-name">Full Name</label>
           <input type="text" placeholder="Your name" required>
         </div>
         <div class="form-group">
-          <label>University Email (.edu)</label>
+          <label id="label-email">University Email (.edu)</label>
           <input type="email" id="emailInput" placeholder="you@seas.upenn.edu" required>
         </div>
         <div class="form-group">
@@ -820,20 +820,20 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Travel Date</label>
+          <label id="label-date">Travel Date</label>
           <input type="date" required>
         </div>
         <div class="form-group">
-          <label>Flight Time (approx.)</label>
+          <label id="label-time">Flight Time (approx.)</label>
           <input type="time" required>
         </div>
         <div class="form-group full">
-          <label>WeChat / WhatsApp (for group coordination)</label>
+          <label id="label-wechat">WeChat / WhatsApp (for group coordination)</label>
           <input type="text" placeholder="WeChat ID or phone number">
         </div>
       </div>
 
-      <button type="submit" class="submit-btn"><span data-en="Reserve My Spot →" data-zh="立即预约 →">Reserve My Spot →</span></button>
+      <button type="submit" class="submit-btn"><span id="btn-submit">Reserve My Spot →</span></button>
       <p class="form-disclaimer">
         By submitting, you agree that we'll contact you via email to confirm your match.<br>
         No charge until your ride is confirmed and you accept.
@@ -856,117 +856,195 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── Form submit ──────────────────────────────
   window.handleSubmit = function(e) {
     e.preventDefault();
-
-    const email = document.getElementById('emailInput').value;
+    var email = document.getElementById('emailInput').value;
     if (!email.endsWith('.edu')) {
       alert('Please use your university .edu email address.');
       return;
     }
-
     document.getElementById('rideForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
-
-    // Scroll to success message
     document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  // Price calculator
-  const selected = { school: null, airport: null };
-
-  // Approximate prices per person (3-4 riders)
-  const prices = {
-    'UPenn':    { 'JFK': 38, 'EWR': 32, 'LGA': 42, 'PHL': 18, 'BOS': 85 },
-    'Princeton':{ 'JFK': 45, 'EWR': 35, 'LGA': 50, 'PHL': 55, 'BOS': 95 },
-    'Rutgers':  { 'JFK': 40, 'EWR': 28, 'LGA': 45, 'PHL': 60, 'BOS': 90 },
-    'NYU':      { 'JFK': 22, 'EWR': 25, 'LGA': 18, 'PHL': 55, 'BOS': 75 },
-    'Columbia': { 'JFK': 28, 'EWR': 32, 'LGA': 22, 'PHL': 60, 'BOS': 78 },
-    'Other':    { 'JFK': 40, 'EWR': 35, 'LGA': 42, 'PHL': 45, 'BOS': 88 },
   };
 
-  const uberPrices = {
-    'UPenn':    { 'JFK': 110, 'EWR': 90, 'LGA': 120, 'PHL': 35, 'BOS': 220 },
-    'Princeton':{ 'JFK': 120, 'EWR': 95, 'LGA': 130, 'PHL': 140, 'BOS': 240 },
-    'Rutgers':  { 'JFK': 115, 'EWR': 80, 'LGA': 125, 'PHL': 150, 'BOS': 230 },
-    'NYU':      { 'JFK': 55,  'EWR': 65, 'LGA': 45,  'PHL': 140, 'BOS': 190 },
-    'Columbia': { 'JFK': 65,  'EWR': 75, 'LGA': 55,  'PHL': 150, 'BOS': 200 },
-    'Other':    { 'JFK': 110, 'EWR': 95, 'LGA': 115, 'PHL': 120, 'BOS': 220 },
+  // ── Price calculator ─────────────────────────
+  var selected = { school: null, airport: null };
+
+  var prices = {
+    'UPenn':     { 'JFK': 38, 'EWR': 32, 'LGA': 42, 'PHL': 18, 'BOS': 85 },
+    'Princeton': { 'JFK': 45, 'EWR': 35, 'LGA': 50, 'PHL': 55, 'BOS': 95 },
+    'Rutgers':   { 'JFK': 40, 'EWR': 28, 'LGA': 45, 'PHL': 60, 'BOS': 90 },
+    'NYU':       { 'JFK': 22, 'EWR': 25, 'LGA': 18, 'PHL': 55, 'BOS': 75 },
+    'Columbia':  { 'JFK': 28, 'EWR': 32, 'LGA': 22, 'PHL': 60, 'BOS': 78 },
+    'Other':     { 'JFK': 40, 'EWR': 35, 'LGA': 42, 'PHL': 45, 'BOS': 88 }
+  };
+
+  var uberPrices = {
+    'UPenn':     { 'JFK': 350, 'EWR': 200, 'LGA': 380, 'PHL': 35,  'BOS': 400 },
+    'Princeton': { 'JFK': 320, 'EWR': 180, 'LGA': 350, 'PHL': 280, 'BOS': 420 },
+    'Rutgers':   { 'JFK': 300, 'EWR': 160, 'LGA': 320, 'PHL': 300, 'BOS': 410 },
+    'NYU':       { 'JFK': 55,  'EWR': 65,  'LGA': 45,  'PHL': 140, 'BOS': 190 },
+    'Columbia':  { 'JFK': 65,  'EWR': 75,  'LGA': 55,  'PHL': 150, 'BOS': 200 },
+    'Other':     { 'JFK': 350, 'EWR': 200, 'LGA': 370, 'PHL': 300, 'BOS': 400 }
   };
 
   window.selectOption = function(type, value, btn) {
     selected[type] = value;
-    const group = type === 'school' ? 'schoolOptions' : 'airportOptions';
-    document.querySelectorAll(`#${group} .calc-btn`).forEach(b => b.classList.remove('active'));
+    var groupId = type === 'school' ? 'schoolOptions' : 'airportOptions';
+    document.querySelectorAll('#' + groupId + ' .calc-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
     btn.classList.add('active');
     updateResult();
-  }
+  };
 
-  window.updateResult = function() {
-    const result = document.getElementById('calcResult');
+  function updateResult() {
+    var result = document.getElementById('calcResult');
     if (!selected.school || !selected.airport) {
-      result.innerHTML = '<div class="result-placeholder">👆 Select your school and airport to see your price</div>';
+      result.innerHTML = '<div class="result-placeholder">' + (currentLang === 'zh' ? '👆 选择学校和机场查看价格' : '👆 Select your school and airport to see your price') + '</div>';
       return;
     }
-
-    const price = prices[selected.school][selected.airport];
-    const uber = uberPrices[selected.school][selected.airport];
-    const saving = uber - price;
-    const savePct = Math.round((saving / uber) * 100);
-
-    result.innerHTML = `
-      <div class="result-left">
-        <div class="result-label">${selected.school} → ${selected.airport} · per person</div>
-        <div class="result-price"><sup>$</sup>${price} <span class="per">/ person</span></div>
-      </div>
-      <div class="result-right">
-        <div class="result-saving">Save $${saving} vs Uber</div>
-        <div class="result-vs">${savePct}% cheaper · Uber ~$${uber} alone</div>
-      </div>
-    `;
+    var price = prices[selected.school][selected.airport];
+    var uber = uberPrices[selected.school][selected.airport];
+    var saving = uber - price;
+    var savePct = Math.round((saving / uber) * 100);
+    result.innerHTML =
+      '<div class="result-left">' +
+        '<div class="result-label">' + selected.school + ' → ' + selected.airport + ' · per person</div>' +
+        '<div class="result-price"><sup>$</sup>' + price + ' <span class="per">/ person</span></div>' +
+      '</div>' +
+      '<div class="result-right">' +
+        '<div class="result-saving">Save $' + saving + ' vs Uber</div>' +
+        '<div class="result-vs">' + savePct + '% cheaper · Uber ~$' + uber + ' alone</div>' +
+      '</div>';
   }
 
-  
-  // Smooth entrance for cards
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+  // ── Language toggle ──────────────────────────
+  var currentLang = 'en';
+
+  var T = {
+    en: {
+      'nav-cta': 'Book a Ride',
+      'hero-tag-text': 'Pre-registrations open · Spring Break &amp; Summer 2026',
+      'hero-h1-line1': 'Split the ride.',
+      'hero-h1-line2': 'Not your wallet.',
+      'hero-sub': 'Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.',
+      'btn-register': 'Register Your Trip →',
+      'btn-how': 'How it works',
+      'stat-1-label': 'avg per person, 7-seat car',
+      'stat-2-label': 'Uber alone PHL→JFK',
+      'stat-3-label': 'major travel seasons',
+      'stat-4-label': 'verified students only',
+      'why-label': 'Why CampusRide',
+      'why-title': 'Stop overpaying.<br>Stop the group chat chaos.',
+      'uber-tag': '❌ UBER / LYFT',
+      'uber-title': 'Solo ride',
+      'uber-desc': 'Uber from Philly to JFK costs $350+ alone. During break season with surge pricing, it only gets worse.',
+      'wechat-tag': '😓 小红书 / WECHAT GROUPS',
+      'wechat-title': 'Manual carpool',
+      'wechat-desc': "Post, wait, DM, negotiate, cancel. No guarantee, no accountability, and you're lugging bags on NJ Transit.",
+      'campus-tag': '✅ CAMPUSRIDE',
+      'campus-title': 'Smart carpool',
+      'campus-desc': 'Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.',
+      'how-label': 'Process',
+      'how-title': 'Four steps to the terminal',
+      'step1-title': 'Verify with .edu',
+      'step1-desc': 'Sign up with your university email. Only real students from partner schools get access.',
+      'step2-title': 'Enter your flight',
+      'step2-desc': 'Tell us your airport (JFK / EWR / LGA), date, and departure time window.',
+      'step3-title': 'Auto-matched',
+      'step3-desc': "We match you with 2-3 students going the same direction. You'll see who's in your group before confirming.",
+      'step4-title': 'Ride & split',
+      'step4-desc': 'A licensed, vetted driver picks everyone up. Cost is split automatically. Simple.',
+      'pricing-label': 'Pricing',
+      'pricing-title': 'See your estimated price',
+      'form-label': 'Get Started',
+      'form-title': 'Register your next trip',
+      'form-sub': "We'll match you with fellow students and confirm your ride within 24 hours.",
+      'label-name': 'Full Name',
+      'label-email': 'University Email (.edu)',
+      'label-school': 'Your School',
+      'label-airport': 'Destination Airport',
+      'label-date': 'Travel Date',
+      'label-time': 'Flight Time (approx.)',
+      'label-wechat': 'WeChat / WhatsApp',
+      'btn-submit': 'Reserve My Spot →'
+    },
+    zh: {
+      'nav-cta': '预约拼车',
+      'hero-tag-text': '现已开放预约 · 春假 &amp; 2026年暑假',
+      'hero-h1-line1': '拼车出行。',
+      'hero-h1-line2': '省钱省心。',
+      'hero-sub': '与<strong>同校同学</strong>一起拼车去机场——结交新朋友，安全合法，比Uber便宜得多。',
+      'btn-register': '立即预约 →',
+      'btn-how': '如何使用',
+      'stat-1-label': '每人均价，7座车',
+      'stat-2-label': 'Uber单程 费城→纽约',
+      'stat-3-label': '主要出行季节',
+      'stat-4-label': '仅限认证学生',
+      'why-label': '为什么选择我们',
+      'why-title': '告别高价打车。<br>告别群聊乱约车。',
+      'uber-tag': '❌ UBER / LYFT',
+      'uber-title': '单独打车',
+      'uber-desc': '费城到JFK单程Uber高达$350+，节假日高峰期还会更贵。',
+      'wechat-tag': '😓 小红书 / 微信群',
+      'wechat-title': '手动拼车',
+      'wechat-desc': '发帖、等待、私信、谈价、取消……提着大行李坐NJ Transit又贵又累。',
+      'campus-tag': '✅ CAMPUSRIDE',
+      'campus-title': '智能拼车',
+      'campus-desc': '只与同校认证学生配对，结交新朋友。持牌司机，门到门服务，行李无忧。',
+      'how-label': '使用流程',
+      'how-title': '四步抵达机场',
+      'step1-title': '学校邮箱验证',
+      'step1-desc': '用.edu邮箱注册，只有合作学校的真实学生才能使用。',
+      'step2-title': '输入航班信息',
+      'step2-desc': '告诉我们目的地机场（JFK/EWR/LGA）、日期和出发时间。',
+      'step3-title': '自动配对',
+      'step3-desc': '系统匹配2-3位同方向同学，确认前可查看同行人信息。',
+      'step4-title': '拼车出发',
+      'step4-desc': '持牌司机统一接送，费用自动分摊，简单方便。',
+      'pricing-label': '价格',
+      'pricing-title': '查看预估价格',
+      'form-label': '立即开始',
+      'form-title': '预约您的下次行程',
+      'form-sub': '我们将在24小时内为您匹配同校同学并确认行程。',
+      'label-name': '姓名',
+      'label-email': '学校邮箱（.edu）',
+      'label-school': '您的学校',
+      'label-airport': '目的地机场',
+      'label-date': '出行日期',
+      'label-time': '航班时间',
+      'label-wechat': '微信号 / WhatsApp',
+      'btn-submit': '立即预约 →'
+    }
+  };
+
+  window.toggleLang = function() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    document.getElementById('langBtn').textContent = currentLang === 'en' ? '中文' : 'EN';
+    var t = T[currentLang];
+    Object.keys(t).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = t[id];
+    });
+  };
+
+  // ── Scroll animations ────────────────────────
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
       if (entry.isIntersecting) {
-        entry.target.style.animation = `fadeUp 0.5s ${i * 0.08}s ease both`;
+        entry.target.style.animation = 'fadeUp 0.5s ' + (i * 0.08) + 's ease both';
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.step-card, .compare-card').forEach(el => {
+  document.querySelectorAll('.step-card, .compare-card').forEach(function(el) {
     el.style.opacity = '0';
     observer.observe(el);
   });
-
-  // Language toggle
-  let currentLang = 'en';
-
-  function toggleLang() {
-    currentLang = currentLang === 'en' ? 'zh' : 'en';
-    const btn = document.getElementById('langBtn');
-    btn.textContent = currentLang === 'en' ? '中文' : 'EN';
-
-    document.querySelectorAll('[data-en]').forEach(el => {
-      const text = el.getAttribute('data-' + currentLang);
-      if (text) el.innerHTML = text;
-    });
-
-    // Update placeholder texts
-    if (currentLang === 'zh') {
-      document.querySelector('[placeholder="Your name"]') && (document.querySelector('[placeholder="Your name"]').placeholder = '您的姓名');
-      document.querySelector('[placeholder="you@seas.upenn.edu"]') && (document.querySelector('[placeholder="you@seas.upenn.edu"]').placeholder = '您的学校邮箱');
-      document.querySelector('[placeholder="WeChat ID or phone number"]') && (document.querySelector('[placeholder="WeChat ID or phone number"]').placeholder = '微信号或手机号');
-    } else {
-      document.querySelector('[placeholder="您的姓名"]') && (document.querySelector('[placeholder="您的姓名"]').placeholder = 'Your name');
-      document.querySelector('[placeholder="您的学校邮箱"]') && (document.querySelector('[placeholder="您的学校邮箱"]').placeholder = 'you@seas.upenn.edu');
-      document.querySelector('[placeholder="微信号或手机号"]') && (document.querySelector('[placeholder="微信号或手机号"]').placeholder = 'WeChat ID or phone number');
-    }
-  }
-
 </script>
 </body>
 </html>
