@@ -7,15 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --surface2: #1c1c28;
+    --bg: #ffffff;
+    --surface: #f5f5f7;
+    --surface2: #eeeef2;
     --accent: #6c63ff;
     --accent2: #ff6b6b;
-    --accent3: #ffd93d;
-    --text: #f0f0f5;
-    --text-dim: #8888aa;
-    --border: rgba(255,255,255,0.07);
+    --accent3: #f59e0b;
+    --text: #0a0a0f;
+    --text-dim: #666680;
+    --border: rgba(0,0,0,0.08);
     --radius: 16px;
   }
 
@@ -35,7 +35,7 @@
     position: fixed;
     top: -200px; left: -200px;
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(108,99,255,0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -44,7 +44,7 @@
     position: fixed;
     bottom: -200px; right: -200px;
     width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(255,107,107,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255,107,107,0.05) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -55,9 +55,9 @@
     z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 20px 48px;
-    background: rgba(10,10,15,0.8);
+    background: rgba(255,255,255,0.9);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
   }
 
   .logo {
@@ -107,11 +107,19 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom, 
-      rgba(10,10,15,0.65) 0%, 
-      rgba(10,10,15,0.45) 30%, 
-      rgba(10,10,15,0.88) 85%,
+      rgba(10,10,15,0.55) 0%, 
+      rgba(10,10,15,0.40) 30%, 
+      rgba(10,10,15,0.82) 85%,
       rgba(10,10,15,1) 100%);
   }
+
+  /* Keep hero text white since it's over the dark plane image overlay */
+  .hero h1, .hero .hero-sub, .hero .hero-tag, .hero .stats, .hero .hero-actions { color: #f0f0f5 !important; }
+  .hero .hero-tag { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+  .hero .stat .num { color: #f0f0f5; }
+  .hero .stat .label { color: rgba(255,255,255,0.6); }
+  .btn-secondary { color: #f0f0f5 !important; border-color: rgba(255,255,255,0.3) !important; }
+  .btn-secondary:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
 
   /* HERO */
   .hero {
@@ -244,7 +252,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--text-dim);
+    color: #999;
   }
   .schools-list span:hover { color: var(--text); transition: 0.2s; }
 
@@ -281,8 +289,9 @@
   }
 
   .step-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     border-radius: var(--radius);
     padding: 32px 28px;
     transition: all 0.3s;
@@ -323,7 +332,8 @@
 
   /* PRICING CALCULATOR */
   .calc-wrapper {
-    background: var(--surface);
+    background: #ffffff;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 48px;
@@ -356,7 +366,7 @@
   }
 
   .calc-btn {
-    background: var(--bg);
+    background: #f5f5f7;
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 10px 18px;
@@ -377,7 +387,7 @@
   .calc-result {
     margin-top: 32px;
     padding: 32px;
-    background: var(--surface2);
+    background: #f0f0ff;
     border: 1px solid rgba(108,99,255,0.2);
     border-radius: 16px;
     display: flex;
@@ -442,9 +452,9 @@
   /* FORM SECTION */
   .form-section {
     position: relative; z-index: 1;
-    background: var(--surface);
+    background: #f5f5f7;
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     padding: 80px 24px;
   }
 
@@ -471,8 +481,8 @@
   label { font-size: 13px; color: var(--text-dim); font-weight: 500; }
 
   input, select {
-    background: var(--bg);
-    border: 1px solid var(--border);
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.12);
     border-radius: 10px;
     padding: 14px 16px;
     color: var(--text);
@@ -570,8 +580,9 @@
     text-align: center;
     padding: 40px 24px;
     font-size: 13px;
-    color: var(--text-dim);
-    border-top: 1px solid var(--border);
+    color: #999;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    background: #f5f5f7;
   }
   footer strong { color: var(--text); }
 </style>
@@ -590,7 +601,7 @@
   <div class="hero-bg"></div>
   <div class="hero-tag" style="position:relative;z-index:1;">
     <span class="dot"></span>
-    Now accepting pre-registrations for Summer 2025
+    Pre-registrations open · Spring Break &amp; Summer 2026
   </div>
 
   <h1 style="position:relative;z-index:1;">
@@ -599,7 +610,7 @@
   </h1>
 
   <p class="hero-sub" style="position:relative;z-index:1;">
-    Verified airport carpools for international students at Penn, Rutgers, Princeton and more. Safe, legal, and way cheaper than Uber.
+    Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.
   </p>
 
   <div class="hero-actions" style="position:relative;z-index:1;">
@@ -613,12 +624,12 @@
 
   <div class="stats" style="position:relative;z-index:1;">
     <div class="stat">
-      <div class="num"><span>~</span>$35</div>
-      <div class="label">per person to JFK</div>
+      <div class="num"><span>&lt;</span>$100</div>
+      <div class="label">avg per person, 7-seat car</div>
     </div>
     <div class="stat">
-      <div class="num"><span>vs</span> $90+</div>
-      <div class="label">Uber alone</div>
+      <div class="num"><span>vs</span> $350+</div>
+      <div class="label">Uber alone PHL→JFK</div>
     </div>
     <div class="stat">
       <div class="num">4<span>×</span></div>
@@ -647,7 +658,7 @@
 </div>
 
 <!-- COMPARE -->
-<section class="section">
+<section class="section compare-section">
   <div class="section-label">Why CampusRide</div>
   <h2 class="section-title">Stop overpaying. Stop the group chat chaos.</h2>
 
@@ -655,8 +666,8 @@
     <div class="compare-card bad">
       <span class="tag">❌ Uber / Lyft</span>
       <h3>Solo ride</h3>
-      <div class="price-big bad-price">$90+</div>
-      <p>Expensive surge pricing, especially during break season when everyone is leaving campus at the same time.</p>
+      <div class="price-big bad-price">$350+</div>
+      <p>Uber from Philly to JFK costs $350+ alone. During break season with surge pricing, it only gets worse.</p>
     </div>
     <div class="compare-card mid">
       <span class="tag">😓 小红书 / WeChat groups</span>
@@ -667,8 +678,8 @@
     <div class="compare-card good">
       <span class="tag">✅ CampusRide</span>
       <h3>Smart carpool</h3>
-      <div class="price-big good-price">~$35</div>
-      <p>Auto-matched with verified classmates. Licensed drivers. Door-to-door with all your luggage. Done.</p>
+      <div class="price-big good-price">&lt;$100</div>
+      <p>Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.</p>
     </div>
   </div>
 </section>
