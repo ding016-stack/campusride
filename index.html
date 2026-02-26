@@ -78,6 +78,19 @@
     letter-spacing: 0.5px;
   }
 
+  .lang-btn {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
+
   nav .cta-btn {
     background: var(--accent);
     color: white;
@@ -591,9 +604,12 @@
 
 <!-- NAV -->
 <nav>
-  <div class="logo">Campus<span>Ride</span></div>
+  <a href="#" class="logo" style="text-decoration:none;">Campus<span>Ride</span></a>
   <div class="nav-badge">✈ BETA · NYC AREA</div>
-  <button class="cta-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Book a Ride</button>
+  <div style="display:flex;gap:12px;align-items:center;">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">中文</button>
+      <button class="cta-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" id="nav-cta"><span data-en="Book a Ride" data-zh="预约拼车">Book a Ride</span></button>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -601,21 +617,21 @@
   <div class="hero-bg"></div>
   <div class="hero-tag" style="position:relative;z-index:1;">
     <span class="dot"></span>
-    Pre-registrations open · Spring Break &amp; Summer 2026
+    <span data-en="Pre-registrations open · Spring Break &amp; Summer 2026" data-zh="现已开放预约 · 春假 &amp; 2026年暑假">Pre-registrations open · Spring Break &amp; Summer 2026</span>
   </div>
 
   <h1 style="position:relative;z-index:1;">
-    Split the ride.<br>
-    <span class="line2">Not your wallet.</span>
+    <span data-en="Split the ride." data-zh="拼车出行">Split the ride.</span><br>
+    <span class="line2" data-en="Not your wallet." data-zh="省钱省心">Not your wallet.</span>
   </h1>
 
   <p class="hero-sub" style="position:relative;z-index:1;">
-    Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.
+    <span data-en='Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.' data-zh='与<strong>同校同学</strong>一起拼车去机场——结交新朋友，安全合法，比Uber便宜得多。'>Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.</span>
   </p>
 
   <div class="hero-actions" style="position:relative;z-index:1;">
     <button class="btn-primary" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">
-      Register Your Trip →
+      <span data-en="Register Your Trip →" data-zh="立即预约 →">Register Your Trip →</span>
     </button>
     <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
       How it works
@@ -625,19 +641,19 @@
   <div class="stats" style="position:relative;z-index:1;">
     <div class="stat">
       <div class="num"><span>&lt;</span>$100</div>
-      <div class="label">avg per person, 7-seat car</div>
+      <div class="label"><span data-en="avg per person, 7-seat car" data-zh="每人均价，7座车">avg per person, 7-seat car</span></div>
     </div>
     <div class="stat">
       <div class="num"><span>vs</span> $350+</div>
-      <div class="label">Uber alone PHL→JFK</div>
+      <div class="label"><span data-en="Uber alone PHL→JFK" data-zh="Uber单程费用">Uber alone PHL→JFK</span></div>
     </div>
     <div class="stat">
       <div class="num">4<span>×</span></div>
-      <div class="label">major travel seasons</div>
+      <div class="label"><span data-en="major travel seasons" data-zh="主要出行季节">major travel seasons</span></div>
     </div>
     <div class="stat">
       <div class="num">.edu <span>✓</span></div>
-      <div class="label">verified students only</div>
+      <div class="label"><span data-en="verified students only" data-zh="仅限认证学生">verified students only</span></div>
     </div>
   </div>
 </section>
@@ -659,7 +675,7 @@
 
 <!-- COMPARE -->
 <section class="section compare-section">
-  <div class="section-label">Why CampusRide</div>
+  <div class="section-label"><span data-en="Why CampusRide" data-zh="为什么选择我们">Why CampusRide</span></div>
   <h2 class="section-title">Stop overpaying. Stop the group chat chaos.</h2>
 
   <div class="compare-grid">
@@ -686,8 +702,8 @@
 
 <!-- HOW IT WORKS -->
 <section class="section" id="how">
-  <div class="section-label">Process</div>
-  <h2 class="section-title">Four steps to the terminal</h2>
+  <div class="section-label"><span data-en="Process" data-zh="使用流程">Process</span></div>
+  <h2 class="section-title"><span data-en="Four steps to the terminal" data-zh="四步抵达机场">Four steps to the terminal</span></h2>
 
   <div class="steps-grid">
     <div class="step-card">
@@ -764,9 +780,9 @@
 <!-- REGISTER FORM -->
 <div class="form-section" id="register">
   <div class="form-inner">
-    <div class="section-label" style="text-align:center">Get Started</div>
-    <h2 class="section-title" style="text-align:center; margin: 0 auto 12px; max-width:100%">Register your next trip</h2>
-    <p style="text-align:center; color:var(--text-dim); font-size:15px; margin-bottom:40px">We'll match you with fellow students and confirm your ride within 24 hours.</p>
+    <div class="section-label" style="text-align:center"><span data-en="Get Started" data-zh="立即开始">Get Started</span></div>
+    <h2 class="section-title" style="text-align:center; margin: 0 auto 12px; max-width:100%"><span data-en="Register your next trip" data-zh="预约您的下次行程">Register your next trip</span></h2>
+    <p style="text-align:center; color:var(--text-dim); font-size:15px; margin-bottom:40px"><span data-en="We'll match you with fellow students and confirm your ride within 24 hours." data-zh="我们将在24小时内为您匹配同校同学并确认行程。">We'll match you with fellow students and confirm your ride within 24 hours.</span></p>
 
     <form id="rideForm" onsubmit="handleSubmit(event)">
       <div class="form-grid">
@@ -817,7 +833,7 @@
         </div>
       </div>
 
-      <button type="submit" class="submit-btn">Reserve My Spot →</button>
+      <button type="submit" class="submit-btn"><span data-en="Reserve My Spot →" data-zh="立即预约 →">Reserve My Spot →</span></button>
       <p class="form-disclaimer">
         By submitting, you agree that we'll contact you via email to confirm your match.<br>
         No charge until your ride is confirmed and you accept.
@@ -925,6 +941,31 @@
     el.style.opacity = '0';
     observer.observe(el);
   });
+
+  // Language toggle
+  let currentLang = 'en';
+
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'zh' : 'en';
+    const btn = document.getElementById('langBtn');
+    btn.textContent = currentLang === 'en' ? '中文' : 'EN';
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + currentLang);
+      if (text) el.innerHTML = text;
+    });
+
+    // Update placeholder texts
+    if (currentLang === 'zh') {
+      document.querySelector('[placeholder="Your name"]') && (document.querySelector('[placeholder="Your name"]').placeholder = '您的姓名');
+      document.querySelector('[placeholder="you@seas.upenn.edu"]') && (document.querySelector('[placeholder="you@seas.upenn.edu"]').placeholder = '您的学校邮箱');
+      document.querySelector('[placeholder="WeChat ID or phone number"]') && (document.querySelector('[placeholder="WeChat ID or phone number"]').placeholder = '微信号或手机号');
+    } else {
+      document.querySelector('[placeholder="您的姓名"]') && (document.querySelector('[placeholder="您的姓名"]').placeholder = 'Your name');
+      document.querySelector('[placeholder="您的学校邮箱"]') && (document.querySelector('[placeholder="您的学校邮箱"]').placeholder = 'you@seas.upenn.edu');
+      document.querySelector('[placeholder="微信号或手机号"]') && (document.querySelector('[placeholder="微信号或手机号"]').placeholder = 'WeChat ID or phone number');
+    }
+  }
 
 </script>
 </body>
