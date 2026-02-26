@@ -598,6 +598,82 @@
     background: #f5f5f7;
   }
   footer strong { color: var(--text); }
+
+  .compare-grid-new {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+  @media (max-width: 960px) { .compare-grid-new { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .compare-grid-new { grid-template-columns: 1fr; } }
+
+  .compare-card-new {
+    border-radius: 20px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1.5px solid transparent;
+  }
+  .bad-card    { background: #fff5f5; border-color: #ffc8c8; }
+  .amtrak-card { background: #fffbee; border-color: #ffe099; }
+  .wechat-card { background: #fff8f0; border-color: #ffd4a0; }
+  .good-card   { background: #f0f2ff; border-color: #bcc5ff; }
+
+  .card-header-new { display: flex; flex-direction: column; gap: 6px; }
+
+  .card-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .bad-tag    { color: #d63031; }
+  .amtrak-tag { color: #b7791f; }
+  .wechat-tag { color: #c05000; }
+  .good-tag   { color: #3730a3; }
+
+  .compare-card-new .price-huge {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .bad-card    .price-huge { color: #d63031; }
+  .amtrak-card .price-huge { color: #b7791f; }
+  .wechat-card .price-huge { color: #c05000; }
+  .good-card   .price-huge { color: #3730a3; }
+
+  .card-title-new {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-top: 4px;
+  }
+
+  .why-not-list, .why-yes-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .why-not-list li, .why-yes-list li {
+    font-size: 13.5px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #444;
+  }
+  .why-not-list li::before { content: "✕"; font-weight: 700; color: #d63031; flex-shrink: 0; }
+  .amtrak-list li::before  { color: #b7791f; content: "—"; }
+  .wechat-list li::before  { color: #c05000; }
+  .why-yes-list li::before { content: "✓"; font-weight: 700; color: #3730a3; flex-shrink: 0; }
+
 </style>
 </head>
 <body>
@@ -675,28 +751,69 @@
 
 <!-- COMPARE -->
 <section class="section compare-section">
-  <div class="section-label"><span data-en="Why CampusRide" data-zh="为什么选择我们">Why CampusRide</span></div>
-  <h2 class="section-title">Stop overpaying. Stop the group chat chaos.</h2>
+  <div class="section-label" id="why-label">Why CampusRide</div>
+  <h2 class="section-title" id="why-title">Stop overpaying.<br>Stop the group chat chaos.</h2>
 
-  <div class="compare-grid">
-    <div class="compare-card bad">
-      <span class="tag">❌ Uber / Lyft</span>
-      <h3 id="uber-title">Solo ride</h3>
-      <div class="price-big bad-price">$350+</div>
-      <p id="uber-desc">Uber from Philly to JFK costs $350+ alone. During break season with surge pricing, it only gets worse.</p>
+  <div class="compare-grid-new">
+
+    <div class="compare-card-new bad-card">
+      <div class="card-header-new">
+        <span class="card-tag bad-tag" id="uber-tag">❌ UBER / LYFT</span>
+        <div class="price-huge">$350+</div>
+        <h3 class="card-title-new" id="uber-title">Solo ride</h3>
+      </div>
+      <ul class="why-not-list">
+        <li>$350+ from Philly to JFK — alone</li>
+        <li>Surge pricing every break season</li>
+        <li>Unpredictable, no fixed rate</li>
+        <li>Stranger driver, no community</li>
+      </ul>
     </div>
-    <div class="compare-card mid">
-      <span class="tag" id="wechat-tag">😓 小红书 / WECHAT GROUPS</span>
-      <h3 id="wechat-title">Manual carpool</h3>
-      <div class="price-big mid-price">Chaotic</div>
-      <p id="wechat-desc">Post, wait, DM, negotiate, cancel. No guarantee, no accountability, and you're lugging bags on NJ Transit.</p>
+
+    <div class="compare-card-new amtrak-card">
+      <div class="card-header-new">
+        <span class="card-tag amtrak-tag">🚂 AMTRAK / NJ TRANSIT</span>
+        <div class="price-huge">$180+</div>
+        <h3 class="card-title-new">Exhausting</h3>
+      </div>
+      <ul class="why-not-list amtrak-list">
+        <li>Price keeps changing, often $180+</li>
+        <li>Drag heavy bags through Penn Station</li>
+        <li>3–4 hours with transfers</li>
+        <li>Exhausted before your long flight</li>
+      </ul>
     </div>
-    <div class="compare-card good">
-      <span class="tag">✅ CampusRide</span>
-      <h3 id="campus-title">Smart carpool</h3>
-      <div class="price-big good-price">~$100</div>
-      <p id="campus-desc">Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.</p>
+
+    <div class="compare-card-new wechat-card">
+      <div class="card-header-new">
+        <span class="card-tag wechat-tag" id="wechat-tag">😩 小红书 / WECHAT</span>
+        <div class="price-huge">Chaotic</div>
+        <h3 class="card-title-new" id="wechat-title">Manual carpool</h3>
+      </div>
+      <ul class="why-not-list wechat-list">
+        <li>Post, wait, DM, negotiate, cancel</li>
+        <li>No accountability if someone bails</li>
+        <li>Strangers — safety concerns</li>
+        <li>Hours of back-and-forth for one ride</li>
+      </ul>
     </div>
+
+    <div class="compare-card-new good-card">
+      <div class="card-header-new">
+        <span class="card-tag good-tag" id="campus-tag">✅ CAMPUSRIDE</span>
+        <div class="price-huge good-price-text">~$80</div>
+        <h3 class="card-title-new" id="campus-title">Smart carpool</h3>
+      </div>
+      <ul class="why-yes-list">
+        <li>Split cost with 3–4 verified classmates</li>
+        <li>Only matched with your own school</li>
+        <li>Door-to-door, no luggage struggle</li>
+        <li>Licensed, vetted drivers</li>
+        <li>Make new friends every trip</li>
+        <li>Fixed price, zero surprises</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -792,7 +909,7 @@
         </div>
         <div class="form-group">
           <label id="label-email">University Email (.edu)</label>
-          <input type="email" id="emailInput" placeholder="you@seas.upenn.edu" required>
+          <input type="email" id="emailInput" placeholder="e.g. you@upenn.edu" required>
         </div>
         <div class="form-group">
           <label>Your School</label>
