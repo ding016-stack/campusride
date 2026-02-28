@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CampusRide — Airport Rides for International Students</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Ridly — Airport Rides for International Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #ffffff;
@@ -24,7 +24,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -54,17 +54,40 @@
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 48px;
-    background: rgba(255,255,255,0.9);
+    padding: 0 48px;
+    height: 60px;
+    background: rgba(255,255,255,0.97);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.07);
   }
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .nav-center a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: all 0.15s;
+    letter-spacing: -0.1px;
+  }
+  .nav-center a:hover { background: #f5f5f7; color: #111; }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
 
   .logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: -0.5px;
+    color: #111;
   }
   .logo span { color: var(--accent); }
 
@@ -84,7 +107,7 @@
     border: 1px solid var(--border);
     padding: 10px 18px;
     border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.2s;
@@ -97,7 +120,7 @@
     border: none;
     padding: 10px 22px;
     border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -171,11 +194,11 @@
   }
 
   h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(42px, 7vw, 82px);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(40px, 6vw, 76px);
     font-weight: 800;
     line-height: 1.05;
-    letter-spacing: -2px;
+    letter-spacing: -2.5px;
     margin-bottom: 24px;
     animation: fadeUp 0.6s 0.1s ease both;
   }
@@ -210,7 +233,7 @@
     border: none;
     padding: 16px 32px;
     border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -225,7 +248,7 @@
     border: 1px solid var(--border);
     padding: 16px 32px;
     border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.2s;
@@ -343,8 +366,8 @@
   }
   .step-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
 
-  /* PRICING CALCULATOR */
-  .calc-wrapper {
+  /* PRICING CALCULATOR REMOVED */
+  .calc-wrapper-old {
     background: #ffffff;
     box-shadow: 0 4px 32px rgba(0,0,0,0.08);
     border: 1px solid var(--border);
@@ -384,7 +407,7 @@
     border-radius: 10px;
     padding: 10px 18px;
     color: var(--text-dim);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -499,7 +522,7 @@
     border-radius: 10px;
     padding: 14px 16px;
     color: var(--text);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
     transition: border-color 0.2s;
     outline: none;
@@ -599,80 +622,160 @@
   }
   footer strong { color: var(--text); }
 
+
+  /* ── COMPARE SECTION ─────────────────────── */
+  .compare-section { padding-bottom: 0; }
+
   .compare-grid-new {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
   }
-  @media (max-width: 960px) { .compare-grid-new { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 540px) { .compare-grid-new { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) { .compare-grid-new { grid-template-columns: 1fr; } }
 
   .compare-card-new {
     border-radius: 20px;
-    padding: 28px 22px;
+    padding: 32px 28px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    border: 1.5px solid transparent;
+    gap: 16px;
+    border: 1px solid transparent;
   }
-  .bad-card    { background: #fff5f5; border-color: #ffc8c8; }
-  .amtrak-card { background: #fffbee; border-color: #ffe099; }
-  .wechat-card { background: #fff8f0; border-color: #ffd4a0; }
-  .good-card   { background: #f0f2ff; border-color: #bcc5ff; }
+  .bad-card    { background: #fafafa; border-color: #e8e8e8; }
+  .amtrak-card { background: #fafafa; border-color: #e8e8e8; }
+  .wechat-card { background: #fafafa; border-color: #e8e8e8; }
 
-  .card-header-new { display: flex; flex-direction: column; gap: 6px; }
+  .bad-icon { font-size: 28px; }
 
   .card-tag {
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    color: #999;
   }
-  .bad-tag    { color: #d63031; }
-  .amtrak-tag { color: #b7791f; }
-  .wechat-tag { color: #c05000; }
-  .good-tag   { color: #3730a3; }
-
-  .compare-card-new .price-huge {
-    font-family: 'Syne', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    letter-spacing: -2px;
-    line-height: 1;
-  }
-  .bad-card    .price-huge { color: #d63031; }
-  .amtrak-card .price-huge { color: #b7791f; }
-  .wechat-card .price-huge { color: #c05000; }
-  .good-card   .price-huge { color: #3730a3; }
 
   .card-title-new {
     font-family: 'Syne', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     color: #111;
-    margin-top: 4px;
+    margin: 0;
   }
 
-  .why-not-list, .why-yes-list {
+  .card-summary {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .why-not-list {
     list-style: none;
     padding: 0; margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+    margin-top: 4px;
   }
-  .why-not-list li, .why-yes-list li {
-    font-size: 13.5px;
+  .why-not-list li {
+    font-size: 13px;
     line-height: 1.5;
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    color: #444;
+    color: #888;
   }
-  .why-not-list li::before { content: "✕"; font-weight: 700; color: #d63031; flex-shrink: 0; }
-  .amtrak-list li::before  { color: #b7791f; content: "—"; }
-  .wechat-list li::before  { color: #c05000; }
-  .why-yes-list li::before { content: "✓"; font-weight: 700; color: #3730a3; flex-shrink: 0; }
+  .why-not-list li::before { content: "—"; color: #ccc; flex-shrink: 0; }
+
+  /* RIDLY HIGHLIGHT CARD */
+  .ridly-highlight {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #f0f0ff 0%, #e8f0ff 50%, #f5f0ff 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(108,99,255,0.15);
+    padding: 56px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .ridly-highlight { grid-template-columns: 1fr; padding: 36px 28px; gap: 36px; }
+  }
+
+  .ridly-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6c63ff;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .ridly-highlight-right { display: flex; flex-direction: column; gap: 12px; }
+
+  .ridly-highlight-left h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 700;
+    color: #0a0a0f;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+
+  .ridly-highlight-left p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .ridly-highlight-left p strong { color: #111; }
+
+  .ridly-highlight-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ridly-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 14px;
+    border: 1px solid rgba(108,99,255,0.1);
+  }
+
+  .feat-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+
+  .ridly-feature div strong {
+    display: block;
+    font-size: 14px;
+    color: #111;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .feat-list {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .feat-list li {
+    font-size: 12.5px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .feat-list li::before { content: "·"; color: #6c63ff; font-weight: 700; font-size: 16px; line-height: 1; }
+
 
 </style>
 </head>
@@ -680,8 +783,12 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo" style="text-decoration:none;">Campus<span>Ride</span></a>
-  <div class="nav-badge">✈ BETA · NYC AREA</div>
+  <a href="#" class="logo" style="text-decoration:none;">Rid<span>ly</span></a>
+  <div class="nav-center">
+      <a href="#how">How it works</a>
+      <a href="#register">Schools</a>
+      <a href="#register">Book a ride</a>
+    </div>
   <div style="display:flex;gap:12px;align-items:center;">
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">中文</button>
       <button class="cta-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" id="nav-cta"><span data-en="Book a Ride" data-zh="预约拼车">Book a Ride</span></button>
@@ -717,11 +824,11 @@
   <div class="stats" style="position:relative;z-index:1;">
     <div class="stat">
       <div class="num"><span>&lt;</span>$100</div>
-      <div class="label"><span data-en="avg per person, 7-seat car" data-zh="每人均价，7座车">avg per person, 7-seat car</span></div>
+      <div class="label"><span data-en="per person, split 2–4 riders" data-zh="每人均价，7座车">per person, split 2–4 riders</span></div>
     </div>
     <div class="stat">
       <div class="num"><span>vs</span> $350+</div>
-      <div class="label"><span data-en="Uber alone PHL→JFK" data-zh="Uber单程费用">Uber alone PHL→JFK</span></div>
+      <div class="label"><span data-en="vs Uber alone" data-zh="Uber单程费用">vs Uber alone</span></div>
     </div>
     <div class="stat">
       <div class="num">4<span>×</span></div>
@@ -736,85 +843,121 @@
 
 <!-- SCHOOLS -->
 <div class="schools-strip">
-  <p class="schools-label">Serving students at</p>
+  <p class="schools-label" id="schools-label">Serving students across Pennsylvania, New Jersey, New York &amp; Connecticut</p>
   <div class="schools-list">
     <span>UPenn</span>
     <span>Princeton</span>
     <span>Rutgers</span>
-    <span>NYU</span>
+    <span>Cornell</span>
+    <span>Yale</span>
     <span>Columbia</span>
+    <span>NYU</span>
     <span>Drexel</span>
-    <span>Temple</span>
+    <span>Stevens</span>
     <span>+ More</span>
   </div>
 </div>
 
 <!-- COMPARE -->
 <section class="section compare-section">
-  <div class="section-label" id="why-label">Why CampusRide</div>
-  <h2 class="section-title" id="why-title">Stop overpaying.<br>Stop the group chat chaos.</h2>
+  <div class="section-label" id="why-label">Why Ridly</div>
+  <h2 class="section-title" id="why-title">Every other option<br>has a serious problem.</h2>
 
   <div class="compare-grid-new">
 
     <div class="compare-card-new bad-card">
-      <div class="card-header-new">
-        <span class="card-tag bad-tag" id="uber-tag">❌ UBER / LYFT</span>
-        <div class="price-huge">$350+</div>
-        <h3 class="card-title-new" id="uber-title">Solo ride</h3>
-      </div>
+      <div class="bad-icon">💸</div>
+      <span class="card-tag bad-tag" id="uber-tag">UBER / LYFT</span>
+      <h3 class="card-title-new" id="uber-title">Way too expensive</h3>
+      <p class="card-summary">$100–$400 solo depending on where you are. Surge pricing spikes during every break season when everyone needs a ride at once.</p>
       <ul class="why-not-list">
-        <li>$350+ from Philly to JFK — alone</li>
-        <li>Surge pricing every break season</li>
-        <li>Unpredictable, no fixed rate</li>
-        <li>Stranger driver, no community</li>
+        <li>Unpredictable pricing, no fixed rate</li>
+        <li>Surge 2–3× during peak breaks</li>
+        <li>Stranger driver, zero accountability</li>
       </ul>
     </div>
 
     <div class="compare-card-new amtrak-card">
-      <div class="card-header-new">
-        <span class="card-tag amtrak-tag">🚂 AMTRAK / NJ TRANSIT</span>
-        <div class="price-huge">$180+</div>
-        <h3 class="card-title-new">Exhausting</h3>
-      </div>
+      <div class="bad-icon">😮‍💨</div>
+      <span class="card-tag amtrak-tag">AMTRAK / NJ TRANSIT</span>
+      <h3 class="card-title-new">Physically exhausting</h3>
+      <p class="card-summary">Drag two suitcases through Penn Station, make two transfers, arrive at the airport already tired before a 14-hour flight.</p>
       <ul class="why-not-list amtrak-list">
-        <li>Price keeps changing, often $180+</li>
-        <li>Drag heavy bags through Penn Station</li>
-        <li>3–4 hours with transfers</li>
-        <li>Exhausted before your long flight</li>
+        <li>$80–$200, fluctuates constantly</li>
+        <li>3–4 hours door to terminal</li>
+        <li>No luggage help, crowded trains</li>
       </ul>
     </div>
 
     <div class="compare-card-new wechat-card">
-      <div class="card-header-new">
-        <span class="card-tag wechat-tag" id="wechat-tag">😩 小红书 / WECHAT</span>
-        <div class="price-huge">Chaotic</div>
-        <h3 class="card-title-new" id="wechat-title">Manual carpool</h3>
-      </div>
+      <div class="bad-icon">😩</div>
+      <span class="card-tag wechat-tag" id="wechat-tag">小红书 / WECHAT GROUPS</span>
+      <h3 class="card-title-new" id="wechat-title">Total chaos</h3>
+      <p class="card-summary">Post in 5 group chats, wait 3 days, negotiate with strangers, someone cancels morning of. You've done this before.</p>
       <ul class="why-not-list wechat-list">
-        <li>Post, wait, DM, negotiate, cancel</li>
-        <li>No accountability if someone bails</li>
-        <li>Strangers — safety concerns</li>
-        <li>Hours of back-and-forth for one ride</li>
-      </ul>
-    </div>
-
-    <div class="compare-card-new good-card">
-      <div class="card-header-new">
-        <span class="card-tag good-tag" id="campus-tag">✅ CAMPUSRIDE</span>
-        <div class="price-huge good-price-text">~$80</div>
-        <h3 class="card-title-new" id="campus-title">Smart carpool</h3>
-      </div>
-      <ul class="why-yes-list">
-        <li>Split cost with 3–4 verified classmates</li>
-        <li>Only matched with your own school</li>
-        <li>Door-to-door, no luggage struggle</li>
-        <li>Licensed, vetted drivers</li>
-        <li>Make new friends every trip</li>
-        <li>Fixed price, zero surprises</li>
+        <li>No accountability, no safety</li>
+        <li>Hours of back-and-forth</li>
+        <li>Falls apart last minute</li>
       </ul>
     </div>
 
   </div>
+
+  <!-- RIDLY HIGHLIGHT -->
+  <div class="ridly-highlight">
+    <div class="ridly-highlight-left">
+      <span class="ridly-tag" id="campus-tag">✅ THE RIDLY WAY</span>
+      <h3 id="campus-title">½ the Uber price.<br>10× the comfort.</h3>
+      <p id="campus-desc">A large, comfortable car picks you up <strong>directly from your dorm</strong> and drops you at the terminal. Split with 3–4 verified classmates from your own school. No strangers. No transfers. No stress.</p>
+    </div>
+    <div class="ridly-highlight-right">
+      <div class="ridly-feature">
+        <span class="feat-icon">🏠</span>
+        <div>
+          <strong>Dorm to terminal</strong>
+          <ul class="feat-list">
+            <li>Pickup from your exact building</li>
+            <li>Straight to departures, zero stops</li>
+            <li>No lugging bags through stations</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ridly-feature">
+        <span class="feat-icon">👥</span>
+        <div>
+          <strong>Your school only</strong>
+          <ul class="feat-list">
+            <li>Matched with .edu verified classmates</li>
+            <li>Same campus, same community</li>
+            <li>Make new friends every trip</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ridly-feature">
+        <span class="feat-icon">💰</span>
+        <div>
+          <strong>½ to ⅓ of Uber price</strong>
+          <ul class="feat-list">
+            <li>Cost split across 3–4 riders</li>
+            <li>Fixed fare, no surge surprises</li>
+            <li>Large comfort car included</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ridly-feature">
+        <span class="feat-icon">🛡️</span>
+        <div>
+          <strong>Licensed & vetted</strong>
+          <ul class="feat-list">
+            <li>Professional, insured drivers</li>
+            <li>Safe, legal, fully compliant</li>
+            <li>Coordinated by Ridly team</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- HOW IT WORKS -->
@@ -850,49 +993,7 @@
   </div>
 </section>
 
-<!-- PRICING CALCULATOR -->
-<section class="section">
-  <div class="section-label">Pricing</div>
-  <h2 class="section-title">See your estimated price</h2>
 
-  <div class="calc-wrapper">
-    <div class="calc-row">
-      <div class="calc-group">
-        <label id="label-school">Your School</label>
-        <div class="calc-options" id="schoolOptions">
-          <button class="calc-btn" onclick="selectOption('school', 'UPenn', this)">UPenn</button>
-          <button class="calc-btn" onclick="selectOption('school', 'Princeton', this)">Princeton</button>
-          <button class="calc-btn" onclick="selectOption('school', 'Rutgers', this)">Rutgers</button>
-          <button class="calc-btn" onclick="selectOption('school', 'NYU', this)">NYU</button>
-          <button class="calc-btn" onclick="selectOption('school', 'Columbia', this)">Columbia</button>
-          <button class="calc-btn" onclick="selectOption('school', 'Other', this)">Other</button>
-        </div>
-      </div>
-      <div class="calc-group">
-        <label id="label-airport">Destination Airport</label>
-        <div class="calc-options" id="airportOptions">
-          <button class="calc-btn" onclick="selectOption('airport', 'JFK', this)">JFK</button>
-          <button class="calc-btn" onclick="selectOption('airport', 'EWR', this)">EWR</button>
-          <button class="calc-btn" onclick="selectOption('airport', 'LGA', this)">LGA</button>
-          <button class="calc-btn" onclick="selectOption('airport', 'PHL', this)">PHL</button>
-          <button class="calc-btn" onclick="selectOption('airport', 'BOS', this)">BOS</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="calc-result" id="calcResult">
-      <div class="result-placeholder" id="calc-placeholder">👆 Select your school and airport to see your price</div>
-    </div>
-
-    <div class="calc-includes">
-      <span>Door-to-door pickup</span>
-      <span>Luggage included</span>
-      <span>Licensed driver</span>
-      <span>Live tracking</span>
-      <span>Free 10-min wait</span>
-    </div>
-  </div>
-</section>
 
 <!-- REGISTER FORM -->
 <div class="form-section" id="register">
@@ -918,10 +1019,14 @@
             <option>UPenn</option>
             <option>Princeton</option>
             <option>Rutgers</option>
-            <option>NYU</option>
+            <option>Cornell</option>
+            <option>Yale</option>
             <option>Columbia</option>
+            <option>NYU</option>
+            <option>Stevens Institute</option>
             <option>Drexel</option>
             <option>Temple</option>
+            <option>Lehigh</option>
             <option>Other</option>
           </select>
         </div>
@@ -968,8 +1073,25 @@
 
 <!-- FOOTER -->
 <footer>
-  <p><strong>CampusRide</strong> · Built for international students, by international students · Philadelphia, PA</p>
-  <p style="margin-top: 8px;">Questions? <a href="/cdn-cgi/l/email-protection#1179747d7d7e5172707c616462637875743f706161" style="color:var(--accent); text-decoration:none;"><span class="__cf_email__" data-cfemail="deb6bbb2b2b19ebdbfb3aeabadacb7babbf0bfaeae">[email&#160;protected]</span></a></p>
+  <p><strong>Ridly</strong> · Built for international students, by international students · Philadelphia, PA</p>
+  <p style="margin-top: 14px;">
+    <a href="https://www.instagram.com/ridly.co?igsh=c2RrNGJhOGZ5Y3No&utm_source=qr" target="_blank" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#111;font-weight:500;font-size:14px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="ig2" cx="30%" cy="107%" r="150%">
+            <stop offset="0%" stop-color="#fdf497"/>
+            <stop offset="45%" stop-color="#fd5949"/>
+            <stop offset="60%" stop-color="#d6249f"/>
+            <stop offset="90%" stop-color="#285AEB"/>
+          </radialGradient>
+        </defs>
+        <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig2)"/>
+        <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8" fill="none"/>
+        <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+      </svg>
+      Follow us @ridly.co
+    </a>
+  </p>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -992,19 +1114,25 @@
   var prices = {
     'UPenn':     { 'JFK': 38, 'EWR': 32, 'LGA': 42, 'PHL': 18, 'BOS': 85 },
     'Princeton': { 'JFK': 45, 'EWR': 35, 'LGA': 50, 'PHL': 55, 'BOS': 95 },
-    'Rutgers':   { 'JFK': 40, 'EWR': 28, 'LGA': 45, 'PHL': 60, 'BOS': 90 },
-    'NYU':       { 'JFK': 22, 'EWR': 25, 'LGA': 18, 'PHL': 55, 'BOS': 75 },
-    'Columbia':  { 'JFK': 28, 'EWR': 32, 'LGA': 22, 'PHL': 60, 'BOS': 78 },
-    'Other':     { 'JFK': 40, 'EWR': 35, 'LGA': 42, 'PHL': 45, 'BOS': 88 }
+    'Rutgers':   { 'JFK': 35, 'EWR': 25, 'LGA': 40, 'PHL': 60, 'BOS': 90 },
+    'Cornell':   { 'JFK': 55, 'EWR': 65, 'LGA': 58, 'PHL': 95, 'BOS': 75 },
+    'Yale':      { 'JFK': 48, 'EWR': 55, 'LGA': 50, 'PHL': 90, 'BOS': 45 },
+    'Columbia':  { 'JFK': 25, 'EWR': 30, 'LGA': 20, 'PHL': 60, 'BOS': 78 },
+    'NYU':       { 'JFK': 20, 'EWR': 25, 'LGA': 18, 'PHL': 55, 'BOS': 75 },
+    'Stevens':   { 'JFK': 35, 'EWR': 20, 'LGA': 38, 'PHL': 65, 'BOS': 88 },
+    'Other':     { 'JFK': 42, 'EWR': 38, 'LGA': 45, 'PHL': 50, 'BOS': 88 }
   };
 
   var uberPrices = {
     'UPenn':     { 'JFK': 350, 'EWR': 200, 'LGA': 380, 'PHL': 35,  'BOS': 400 },
     'Princeton': { 'JFK': 320, 'EWR': 180, 'LGA': 350, 'PHL': 280, 'BOS': 420 },
-    'Rutgers':   { 'JFK': 300, 'EWR': 160, 'LGA': 320, 'PHL': 300, 'BOS': 410 },
-    'NYU':       { 'JFK': 55,  'EWR': 65,  'LGA': 45,  'PHL': 140, 'BOS': 190 },
+    'Rutgers':   { 'JFK': 280, 'EWR': 150, 'LGA': 300, 'PHL': 300, 'BOS': 410 },
+    'Cornell':   { 'JFK': 180, 'EWR': 200, 'LGA': 190, 'PHL': 280, 'BOS': 220 },
+    'Yale':      { 'JFK': 160, 'EWR': 180, 'LGA': 170, 'PHL': 260, 'BOS': 120 },
     'Columbia':  { 'JFK': 65,  'EWR': 75,  'LGA': 55,  'PHL': 150, 'BOS': 200 },
-    'Other':     { 'JFK': 350, 'EWR': 200, 'LGA': 370, 'PHL': 300, 'BOS': 400 }
+    'NYU':       { 'JFK': 55,  'EWR': 65,  'LGA': 45,  'PHL': 140, 'BOS': 190 },
+    'Stevens':   { 'JFK': 90,  'EWR': 55,  'LGA': 95,  'PHL': 160, 'BOS': 210 },
+    'Other':     { 'JFK': 300, 'EWR': 180, 'LGA': 320, 'PHL': 280, 'BOS': 380 }
   };
 
   window.selectOption = function(type, value, btn) {
@@ -1050,11 +1178,11 @@
       'hero-sub': 'Split rides to the airport with verified students from <strong>your own school</strong> — make new friends on the way. Safe, legal, and way cheaper than Uber.',
       'btn-register': 'Register Your Trip →',
       'btn-how': 'How it works',
-      'stat-1-label': 'avg per person, 7-seat car',
-      'stat-2-label': 'Uber alone PHL→JFK',
+      'stat-1-label': 'per person, split 2–4 riders',
+      'stat-2-label': 'vs Uber alone',
       'stat-3-label': 'major travel seasons',
       'stat-4-label': 'verified students only',
-      'why-label': 'Why CampusRide',
+      'why-label': 'Why Ridly',
       'why-title': 'Stop overpaying.<br>Stop the group chat chaos.',
       'uber-tag': '❌ UBER / LYFT',
       'uber-title': 'Solo ride',
@@ -1062,7 +1190,7 @@
       'wechat-tag': '😓 小红书 / WECHAT GROUPS',
       'wechat-title': 'Manual carpool',
       'wechat-desc': "Post, wait, DM, negotiate, cancel. No guarantee, no accountability, and you're lugging bags on NJ Transit.",
-      'campus-tag': '✅ CAMPUSRIDE',
+      'campus-tag': '✅ RIDLY',
       'campus-title': 'Smart carpool',
       'campus-desc': 'Matched only with verified students from your school. Make new friends on every trip. Licensed drivers, door-to-door with all your luggage.',
       'how-label': 'Process',
@@ -1097,8 +1225,8 @@
       'hero-sub': '与<strong>同校同学</strong>一起拼车去机场——结交新朋友，安全合法，比Uber便宜得多。',
       'btn-register': '立即预约 →',
       'btn-how': '如何使用',
-      'stat-1-label': '每人均价，7座车',
-      'stat-2-label': 'Uber单程 费城→纽约',
+      'stat-1-label': '每人均价，2-4人拼车',
+      'stat-2-label': '对比Uber单程',
       'stat-3-label': '主要出行季节',
       'stat-4-label': '仅限认证学生',
       'why-label': '为什么选择我们',
@@ -1109,7 +1237,7 @@
       'wechat-tag': '😓 小红书 / 微信群',
       'wechat-title': '手动拼车',
       'wechat-desc': '发帖、等待、私信、谈价、取消……提着大行李坐NJ Transit又贵又累。',
-      'campus-tag': '✅ CAMPUSRIDE',
+      'campus-tag': '✅ RIDLY',
       'campus-title': '智能拼车',
       'campus-desc': '只与同校认证学生配对，结交新朋友。持牌司机，门到门服务，行李无忧。',
       'how-label': '使用流程',
