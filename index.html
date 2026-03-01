@@ -791,7 +791,7 @@
     </div>
   <div style="display:flex;gap:12px;align-items:center;">
       <button class="lang-btn" id="langBtn" onclick="toggleLang()">中文</button>
-      <button class="cta-btn" onclick="window.open('https://tally.so/r/81djJO', '_blank')" id="nav-cta"><span data-en="Book a Ride" data-zh="预约拼车">Book a Ride</span></button>
+      <button class="cta-btn" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})" id="nav-cta"><span data-en="Book a Ride" data-zh="预约拼车">Book a Ride</span></button>
     </div>
 </nav>
 
@@ -813,7 +813,7 @@
   </p>
 
   <div class="hero-actions" style="position:relative;z-index:1;">
-    <button class="btn-primary" onclick="window.open('https://tally.so/r/81djJO', '_blank')">
+    <button class="btn-primary" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">
       <span data-en="Register Your Trip →" data-zh="立即预约 →">Register Your Trip →</span>
     </button>
     <button class="btn-secondary" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
